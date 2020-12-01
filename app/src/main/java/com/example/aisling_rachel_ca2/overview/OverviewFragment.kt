@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.aisling_rachel_ca2.R
 import com.example.aisling_rachel_ca2.databinding.FragmentOverviewBinding
+import com.example.aisling_rachel_ca2.databinding.GridViewItemBinding
 
 class OverviewFragment : Fragment() {
     private val viewModel: OverviewViewModel by lazy {
@@ -14,11 +15,15 @@ class OverviewFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
+
         val binding = FragmentOverviewBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
 
         binding.viewModel = viewModel
+
+        binding.photosGrid.adapter = PhotoGridAdapter()
 
         setHasOptionsMenu(true)
         return binding.root

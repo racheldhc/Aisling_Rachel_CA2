@@ -3,32 +3,46 @@ package com.example.aisling_rachel_ca2.overview
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.aisling_rachel_ca2.network.ShoppingApi
 import com.example.aisling_rachel_ca2.network.ShoppingItem
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 class OverviewViewModel : ViewModel() {
 
-    private val _response = MutableLiveData<String>()
+    private val _status = MutableLiveData<String>()
 
-    val response: LiveData<String>
-        get() = _response
+    val status: LiveData<String>
+        get() = _status
+
+    private val _items = MutableLiveData<List<ShoppingItem>>()
+
+    val items : LiveData<List<ShoppingItem>>
+        get() = _items
 
     init {
         getShoppingItems()
     }
 
     private fun getShoppingItems() {
-        ShoppingApi.retrofitService.getItems().enqueue( object: Callback<List<ShoppingItem>> {
-            override fun onFailure(call: Call<List<ShoppingItem>>, t: Throwable) {
-                _response.value = "Failure: " + t.message
+        viewModelScope.launch {
+            try{
+                var listResult  = ShoppingApi.retrofitService.getItems()
+                _status.value = "Success: ${listResult.size} shopping items found!!"
+                if(listResult.size > 0){
+                    _items.value=listResult
+                }
             }
-
-            override fun onResponse(call: Call<List<ShoppingItem>>, response: Response<List<ShoppingItem>>) {
-                _response.value = "Success: ${response.body()?.size} shopping items found!!"
+            catch (e:Exception){
+                _status.value = "Failure: " + e.message
             }
-        })
+        }
     }
-}
+    }
