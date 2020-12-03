@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.aisling_rachel_ca2.detail.DetailViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +27,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:imageUrl="@{viewModel.selectedItem.imgURL}"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
@@ -32,7 +39,7 @@
                 android:textSize="39sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
-                tools:text="To Rent" />
+                android:text="@{viewModel.selectedItem.type}"/>
 
             <TextView
                 android:id="@+id/price_value_text"
@@ -43,7 +50,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/property_type_text"
-                tools:text="$100,000" />
+                android:text="@{String.valueOf(viewModel.selectedItem.currency) + String.valueOf(viewModel.selectedItem.price)}" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
