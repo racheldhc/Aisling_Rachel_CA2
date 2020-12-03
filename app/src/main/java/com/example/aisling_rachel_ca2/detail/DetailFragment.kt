@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.example.aisling_rachel_ca2.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
@@ -16,6 +17,14 @@ class DetailFragment : Fragment() {
         val application = requireNotNull(activity).application
         val binding = FragmentDetailBinding.inflate(inflater)
         binding.lifecycleOwner = this
+
+        val shoppingItem = DetailFragmentArgs.fromBundle(arguments!!).selectedProperty
+
+        val viewModelFactory = DetailViewModelFactory(shoppingItem, application)
+
+        binding.viewModel = ViewModelProviders                                                                                                                          .of(
+            this, viewModelFactory).get(DetailViewModel::class.java)
+
         return binding.root
     }
 }

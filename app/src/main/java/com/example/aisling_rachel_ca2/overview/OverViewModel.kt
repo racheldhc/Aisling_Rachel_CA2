@@ -31,6 +31,20 @@ class OverviewViewModel : ViewModel() {
         getShoppingItems()
     }
 
+    private val _navigateToSelectedItem = MutableLiveData<ShoppingItem>()
+
+    val navigateToSelectedItem: LiveData<ShoppingItem>
+        get() = _navigateToSelectedItem
+
+    fun displayItemDetails(shoppingItem: ShoppingItem) {
+        _navigateToSelectedItem.value = shoppingItem
+    }
+
+    fun displayItemDetailsComplete() {
+        _navigateToSelectedItem.value = null
+    }
+
+
     private fun getShoppingItems() {
         viewModelScope.launch {
             try{

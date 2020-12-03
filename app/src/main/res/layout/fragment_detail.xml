@@ -39,7 +39,7 @@
                 android:textSize="39sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
-                android:text="@{viewModel.selectedItem.type}"/>
+                android:text="@{viewModel.selectedItem.name}"/>
 
             <TextView
                 android:id="@+id/price_value_text"
