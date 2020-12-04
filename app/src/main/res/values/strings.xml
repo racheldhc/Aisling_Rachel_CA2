@@ -4,6 +4,7 @@
     <string name="show_vegetable">Vegetable</string>
     <string name="show_fruit">Fruit</string>
     <string name="show_meat">Meat</string>
+    <string name="show_dairy">Dairy</string>
     <string name="type_sale">Sale</string>
     <string name="display_type">For %s</string>
     <string name="display_price_monthly_rental">$%,.0f/month</string>

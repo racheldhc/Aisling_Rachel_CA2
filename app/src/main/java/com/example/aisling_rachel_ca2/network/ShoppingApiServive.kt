@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "https://demo4086704.mockable.io"
 
-enum class ShoppingApiFilter(val value: String) { SHOW_VEGETABLES("vegetables"), SHOW_FRUITS("fruits"), SHOW_MEATS("meats"), SHOW_ALL("all") }
+enum class ShoppingApiFilter(val value: String) { SHOW_VEGETABLES("vegetables"), SHOW_FRUITS("fruits"), SHOW_MEATS("meats"), SHOW_DAIRY("dairy"), SHOW_ALL("all") }
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
