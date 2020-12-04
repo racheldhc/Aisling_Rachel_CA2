@@ -5,14 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.aisling_rachel_ca2.network.ShoppingApi
+import com.example.aisling_rachel_ca2.network.ShoppingApiFilter
 import com.example.aisling_rachel_ca2.network.ShoppingItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.lang.Exception
 
 class OverviewViewModel : ViewModel() {
@@ -27,28 +22,19 @@ class OverviewViewModel : ViewModel() {
     val items : LiveData<List<ShoppingItem>>
         get() = _items
 
-    init {
-        getShoppingItems()
-    }
-
     private val _navigateToSelectedItem = MutableLiveData<ShoppingItem>()
 
     val navigateToSelectedItem: LiveData<ShoppingItem>
         get() = _navigateToSelectedItem
 
-    fun displayItemDetails(shoppingItem: ShoppingItem) {
-        _navigateToSelectedItem.value = shoppingItem
+    init {
+        getShoppingItems(ShoppingApiFilter.SHOW_ALL)
     }
 
-    fun displayItemDetailsComplete() {
-        _navigateToSelectedItem.value = null
-    }
-
-
-    private fun getShoppingItems() {
+    private fun getShoppingItems(filter: ShoppingApiFilter) {
         viewModelScope.launch {
             try{
-                var listResult  = ShoppingApi.retrofitService.getItems()
+                var listResult  = ShoppingApi.retrofitService.getItems(filter.value)
                 _status.value = "Success: ${listResult.size} shopping items found!!"
                 if(listResult.size > 0){
                     _items.value=listResult
@@ -59,4 +45,16 @@ class OverviewViewModel : ViewModel() {
             }
         }
     }
+
+    fun displayItemDetails(shoppingItem: ShoppingItem) {
+        _navigateToSelectedItem.value = shoppingItem
     }
+
+    fun displayItemDetailsComplete() {
+        _navigateToSelectedItem.value = null
+    }
+
+    fun updateFilter(filter: ShoppingApiFilter) {
+        getShoppingItems(filter)
+    }
+}

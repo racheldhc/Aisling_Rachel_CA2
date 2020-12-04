@@ -4,9 +4,13 @@
         android:id="@+id/show_all_menu"
         android:title="@string/show_all" />
     <item
-        android:id="@+id/show_rent_menu"
-        android:title="@string/show_rent" />
+        android:id="@+id/show_vegetable_menu"
+        android:title="@string/show_vegetable" />
     <item
-        android:id="@+id/show_buy_menu"
-        android:title="@string/show_buy" />
+        android:id="@+id/show_fruit_menu"
+        android:title="@string/show_fruit" />
+
+    <item
+        android:id="@+id/show_meat_menu"
+        android:title="@string/show_meat" />
 </menu>
