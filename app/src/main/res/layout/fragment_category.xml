@@ -11,7 +11,6 @@
         android:layout_width="409dp"
         android:layout_height="135dp"
         android:alpha="0.4"
-        android:imageUrl="@links/veg_link"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/fruit_photo_image"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +23,6 @@
         android:id="@+id/fruit_photo_image"
         android:layout_width="409dp"
         android:layout_height="135dp"
-        android:imageUrl="@links/fruit_link"
         android:scaleType="centerCrop"
         android:alpha="0.4"
         app:layout_constraintBottom_toTopOf="@+id/meat_photo_image"
@@ -38,7 +36,6 @@
         android:id="@+id/meat_photo_image"
         android:layout_width="409dp"
         android:layout_height="135dp"
-        android:imageUrl="@links/meat_link"
         android:scaleType="centerCrop"
         android:alpha="0.4"
         app:layout_constraintBottom_toTopOf="@+id/dairy_photo_image"
@@ -52,7 +49,6 @@
         android:id="@+id/dairy_photo_image"
         android:layout_width="409dp"
         android:layout_height="135dp"
-        android:imageUrl="@links/dairy_link"
         android:scaleType="centerCrop"
         android:alpha="0.4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,7 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/meat_photo_image"
         tools:src="@tools:sample/backgrounds/scenic" />
-
     <TextView
         android:id="@+id/vegTextView"
         android:layout_width="229dp"
@@ -73,6 +68,8 @@
         app:layout_constraintStart_toStartOf="@+id/veg_photo_image"
         app:layout_constraintTop_toTopOf="@+id/veg_photo_image"
         app:layout_constraintVertical_bias="0.555" />
+
+
 
     <TextView
     android:id="@+id/fruitTextView"

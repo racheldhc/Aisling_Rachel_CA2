@@ -19,15 +19,26 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@{viewModel.selectedItem.itemDescription}"
+                android:textColor="#de000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/property_type_text" />
+
             <ImageView
                 android:id="@+id/main_photo_image"
-                android:layout_width="0dp"
-                android:layout_height="266dp"
+                android:layout_width="390dp"
+                android:layout_height="356dp"
                 android:scaleType="centerCrop"
+                app:imageUrl="@{viewModel.selectedItem.imgURL}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:imageUrl="@{viewModel.selectedItem.imgURL}"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
@@ -35,22 +46,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:textColor="#de000000"
+                android:text="@{viewModel.selectedItem.name}"
+                android:textColor="@android:color/holo_purple"
                 android:textSize="39sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
-                android:text="@{viewModel.selectedItem.name}"/>
+                app:layout_constraintTop_toBottomOf="@+id/main_photo_image" />
 
             <TextView
                 android:id="@+id/price_value_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="52dp"
+                android:text="@{String.valueOf(viewModel.selectedItem.currency) + String.valueOf(viewModel.selectedItem.price)}"
                 android:textColor="#de000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/property_type_text"
-                android:text="@{String.valueOf(viewModel.selectedItem.currency) + String.valueOf(viewModel.selectedItem.price)}" />
+                app:layout_constraintTop_toBottomOf="@+id/property_type_text" />
+
+            <TextView
+                android:id="@+id/totalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@{String.valueOf(viewModel.selectedItem.currency) + String.valueOf(viewModel.selectedItem.pricePer) + viewModel.selectedItem.pricePerQuantity }"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price_value_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

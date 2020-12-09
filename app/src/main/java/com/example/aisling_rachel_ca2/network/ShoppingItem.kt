@@ -8,6 +8,7 @@ import kotlinx.android.parcel.Parcelize
 data class ShoppingItem(
     val imgURL: String,
     val name: String,
+    val itemDescription: String,
     val currency: String,
     val price: Double,
     val pricePer: Double,
