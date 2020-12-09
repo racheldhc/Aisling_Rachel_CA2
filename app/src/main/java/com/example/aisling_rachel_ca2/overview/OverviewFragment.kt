@@ -51,6 +51,7 @@ class OverviewFragment : Fragment() {
                 R.id.show_vegetable_menu -> ShoppingApiFilter.SHOW_VEGETABLES
                 R.id.show_fruit_menu -> ShoppingApiFilter.SHOW_FRUITS
                 R.id.show_meat_menu -> ShoppingApiFilter.SHOW_MEATS
+                R.id.show_dairy_menu -> ShoppingApiFilter.SHOW_DAIRY
                 else -> ShoppingApiFilter.SHOW_ALL
             }
         )

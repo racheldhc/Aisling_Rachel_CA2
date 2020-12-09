@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="veg_link">https://www.fooddudes.ie/wp-content/uploads/2020/04/vegetable_FoodDudess.jpg</string>
+    <string name="fruit_link">https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2F1502826406%2F1708w-getty-fruit-closeup-CarstenSchanter-EyeEm.jpg</string>
+    <string name="meat_link">https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/foodnavigator-asia.com/headlines/food-safety/convincing-research-links-increasing-red-meat-intake-with-heightened-risk-of-death/9868511-1-eng-GB/Convincing-research-links-increasing-red-meat-intake-with-heightened-risk-of-death_wrbm_large.jpg</string>
+    <string name="dairy_milk">https://www.dietdoctor.com/wp-content/uploads/2020/08/dairy.png</string>
+</resources>

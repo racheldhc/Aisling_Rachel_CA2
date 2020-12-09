@@ -13,4 +13,9 @@
     <item
         android:id="@+id/show_meat_menu"
         android:title="@string/show_meat" />
+
+    <item
+        android:id="@+id/show_dairy_menu"
+        android:title="@string/show_dairy" />
+
 </menu>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/veg_photo_image"
+        android:layout_width="409dp"
+        android:layout_height="135dp"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/fruit_photo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/fruit_photo_image"
+        android:layout_width="409dp"
+        android:layout_height="135dp"
+        android:scaleType="centerCrop"
+        android:alpha="0.4"
+        app:layout_constraintBottom_toTopOf="@+id/meat_photo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veg_photo_image"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/meat_photo_image"
+        android:layout_width="409dp"
+        android:layout_height="135dp"
+        android:scaleType="centerCrop"
+        android:alpha="0.4"
+        app:layout_constraintBottom_toTopOf="@+id/dairy_photo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fruit_photo_image"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/dairy_photo_image"
+        android:layout_width="409dp"
+        android:layout_height="135dp"
+        android:scaleType="centerCrop"
+        android:alpha="0.4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meat_photo_image"
+        tools:src="@tools:sample/backgrounds/scenic" />
+    <TextView
+        android:id="@+id/vegTextView"
+        android:layout_width="229dp"
+        android:layout_height="69dp"
+        android:text="@string/show_vegetable"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/veg_photo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/veg_photo_image"
+        app:layout_constraintTop_toTopOf="@+id/veg_photo_image"
+        app:layout_constraintVertical_bias="0.555" />
+
+
+
+    <TextView
+    android:id="@+id/fruitTextView"
+    android:layout_width="109dp"
+    android:layout_height="63dp"
+    android:text="@string/show_fruit"
+    android:textSize="50dp"
+    app:layout_constraintBottom_toBottomOf="@+id/fruit_photo_image"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/fruit_photo_image"
+    app:layout_constraintTop_toTopOf="@+id/fruit_photo_image"
+    app:layout_constraintVertical_bias="0.555" />
+
+    <TextView
+        android:id="@+id/meatTextView"
+        android:layout_width="116dp"
+        android:layout_height="74dp"
+        android:text="@string/show_meat"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/meat_photo_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/meat_photo_image"
+        app:layout_constraintTop_toTopOf="@+id/meat_photo_image"
+        app:layout_constraintVertical_bias="0.555" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
